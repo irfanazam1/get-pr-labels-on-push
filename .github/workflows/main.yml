@@ -1,0 +1,17 @@
+on:
+    push:
+        branches:
+            - master
+
+jobs:
+    get_pr_labels_job:
+        runs-on: ubuntu-latest
+        name: A job to get the PR labels
+        steps:
+            - name: Get PR labels action step
+              id: get_pr_labels
+              uses: irfanazam1/get-pr-labels-on-push-action@main
+              with:
+                  github-token: ${{ secrets.GITHUB_TOKEN }}
+            - name: See result
+              run: echo "${{ steps.get_pr_labels.outputs.result }}"

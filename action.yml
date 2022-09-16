@@ -1,0 +1,16 @@
+name: 'Get PR Labels on Push'
+description: 'This action gets all the labels attached to the PR on the push.'
+inputs:
+  github-token: 
+    description: 'Access token, i.e. secrets.GITHUB_TOKEN'
+    required: true
+
+outputs:
+  result:
+    description: 'Contains the names of all the labels'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
+branding:
+  icon: 'check-circle'
+  color: 'green'
