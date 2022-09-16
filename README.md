@@ -33,14 +33,14 @@ on:
 jobs:
   get_pr_labels_job:
     runs-on: ubuntu-latest
-    name: A job to get the PR labels
+    name: Get PR labels job
     steps:
-    - name: Get PR labels action step
+    - name: Get PR labels step
       id: get_pr_labels
       uses: irfanazam1/get-pr-labels-on-push-action@v1
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: See result
-      run: echo "${{ steps.check_pr_labels.outputs.result }}"
+      run: echo "${{ steps.get_pr_labels.outputs.result }}"
 ```
